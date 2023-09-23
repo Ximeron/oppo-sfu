@@ -7,4 +7,4 @@ struct Date {
     int yy;
 };
 
-Date getDate(std::istream& ist);
+Date GetDate(std::istream& ist);

@@ -6,7 +6,7 @@
 
 using namespace std;
 
-Date getDate(istream& ist) {
+Date GetDate(istream& ist) {
     Date date;
     ist >> date.dd;
     ist.get();

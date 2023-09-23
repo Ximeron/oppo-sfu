@@ -4,7 +4,7 @@
 
 Weather GetWeather(std::istream& ist) {
     Weather weather;
-    weather.d = getDate(ist);
+    weather.d = GetDate(ist);
     ist >> weather.place;
     ist >> weather.temp;
     return weather;
