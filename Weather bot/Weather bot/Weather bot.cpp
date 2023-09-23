@@ -13,7 +13,6 @@ using namespace std;
 
 int main() {
     vector<Weather> weath;
-
     ifstream in("weather.txt");
     WarnIfFileNotOpen(in);
     while (!in.eof()) {
