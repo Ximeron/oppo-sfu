@@ -7,5 +7,8 @@ struct Weather {
     Date d;
     std::string place;
     double temp;
+
+    void print(std::ostream& out) const;
 }; 
+
 Weather GetWeather(std::istream& ist);

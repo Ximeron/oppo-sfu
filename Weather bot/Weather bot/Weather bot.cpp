@@ -19,5 +19,6 @@ int main() {
         Weather w = GetWeather(in);
         weath.push_back(w);
     }
-    for (const auto& data:weath)  cout << data.d.dd << '.' << data.d.mm << '.' << data.d.yy << " " << data.place << " " << data.temp << endl;
+    for (const auto& data : weath)
+        data.print(std::cout);
 }
