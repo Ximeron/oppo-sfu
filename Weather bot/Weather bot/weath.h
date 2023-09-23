@@ -10,4 +10,4 @@ struct Weather {
     std::string place;
     double temp;
 }; 
-Weather getWeather(std::istream& ist);
+Weather GetWeather(std::istream& ist);

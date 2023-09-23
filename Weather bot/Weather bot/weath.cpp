@@ -2,7 +2,7 @@
 #include "weath.h"
 
 
-Weather getWeather(std::istream& ist) {
+Weather GetWeather(std::istream& ist) {
     Weather weather;
     weather.d = getDate(ist);
     ist >> weather.place;
