@@ -15,7 +15,7 @@ int main() {
     vector<Weather> weath;
     ifstream in("weather.txt");
     WarnIfFileNotOpen(in);
-    while (!in.eof()) {
+    while (in.good()) {
         Weather w = GetWeather(in);
         weath.push_back(w);
     }
