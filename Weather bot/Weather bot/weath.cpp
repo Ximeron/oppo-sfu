@@ -1,5 +1,8 @@
 #include <iostream>
 #include "weath.h"
+#include <stdexcept>
+
+
 
 void Weather::print(std::ostream& out) const
 {
@@ -9,8 +12,16 @@ void Weather::print(std::ostream& out) const
 
 Weather GetWeather(std::istream& ist) {
     Weather weather;
+    if (ist.bad()) {
+        throw std::exception("Функция чтения погоды");
+    }
     weather.d = GetDate(ist);
     ist >> weather.place;
     ist >> weather.temp;
+
+
+   
+
+  
     return weather;
 }

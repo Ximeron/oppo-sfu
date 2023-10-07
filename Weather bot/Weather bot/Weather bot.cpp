@@ -12,13 +12,27 @@ using namespace std;
 
 
 int main() {
+    setlocale(0, "");
     vector<Weather> weath;
+   // WarnIfFileNotOpen(in);
     ifstream in("weather.txt");
-    WarnIfFileNotOpen(in);
-    while (in.good()) {
+   
+
+    try
+    {
         Weather w = GetWeather(in);
         weath.push_back(w);
     }
+    catch (const std::exception)
+    {
+        std::cout << "File is not openmjnmjjn";
+        return 0;
+    }
+    catch (const std::range_error) {
+        std::cout << "Неверный формат даты";
+        return 0;
+    }
     for (const auto& data : weath)
         data.print(std::cout);
+
 }
