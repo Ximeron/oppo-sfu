@@ -15,6 +15,7 @@ Weather GetWeather(std::istream& ist) {
     if (ist.bad()) {
         throw std::exception("Функция чтения погоды");
     }
+
     weather.d = GetDate(ist);
     ist >> weather.place;
     ist >> weather.temp;
