@@ -12,17 +12,34 @@ void Weather::print(std::ostream& out) const
 
 Weather GetWeather(std::istream& ist) {
     Weather weather;
-    if (ist.bad()) {
-        throw std::exception("Ôóíêöèÿ ÷òåíèÿ ïîãîäû");
+   
+ 
+    weather.d = GetDate(ist);
+
+    getline(ist, weather.place, '"');
+    ist >> weather.temp;
+    std::string a = weather.place;
+
+    for (int e=0; e < weather.place.length();e++) {
+        if (a[0] == '-' || a[-1] == '-') {
+            ////
+        }
+        else {
+            const std::string validChars = "- ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀÁÂÃÄÅ¨ÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäå¸æçèéêëìíîïğñòóôõö÷øùúûüışÿ";
+            if (validChars.find_first_of(a[e]) == std::string::npos) {
+                std::cout << "qwerty" << std::endl;
+            }
+        }
+        
     }
 
-    weather.d = GetDate(ist);
-    ist >> weather.place;
-    ist >> weather.temp;
+
 
 
    
-
+    if (ist.bad()) {
+        throw std::exception("Îøèáêà ôóíêöèè ÷òåíèÿ ïîãîäû");
+    }
   
     return weather;
 }

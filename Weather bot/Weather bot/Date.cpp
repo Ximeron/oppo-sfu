@@ -7,53 +7,48 @@
 
 using namespace std;
 
-bool IsLeap(int year)
+int IsLeap(int year)
 {
     return (year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0));
 }
 
+bool Feb_test(int d, int m, int y) {
+    if (IsLeap(y)) {
+        if (m == 2 && d > 29) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
+
+bool D_check(int day, int month, int year) {
+    if (day > 31 || month > 12 || day<=0 || month <=0 || year <=0) {
+
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 Date GetDate(istream& ist) {
-    //std::string s;
-    //std::getline(ist, s);
-    //std::cout << s;
+    string ch;
 
     Date date;
     ist >> date.dd;
-    //std::cout << date.dd;
 
     ist.get();
     ist >> date.mm;
-    //std::cout << date.mm;
 
     ist.get();
     ist >> date.yy;
-    //std::cout << date.yy;
+    getline(ist, ch, '"');
 
 
-    switch (switch_on)
-    {
-
-    case 0: {
-
-
-    }
-
-    case 1: {
-
-
-    }
-    default:
-        break;
-    }
-
-
-    if (date.dd > 31 || date.mm > 12 || date.mm <= 0 || date.dd <= 0) {
+    if (!ist.good() || Feb_test(date.dd, date.mm, date.yy) || D_check(date.dd, date.mm, date.yy)) {
         throw std::range_error("Неверный формат даты");
     }
-    
-    
-    
     return date;
-  
-    
 }
