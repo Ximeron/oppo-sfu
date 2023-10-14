@@ -12,3 +12,4 @@ struct Date {
 };
 
 Date GetDate(std::istream& ist);
+bool IsLeap(int year);
