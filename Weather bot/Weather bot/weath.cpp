@@ -3,6 +3,7 @@
 #include <stdexcept>
 
 
+int q = 0;
 
 void Weather::print(std::ostream& out) const
 {
@@ -20,9 +21,14 @@ Weather GetWeather(std::istream& ist) {
     ist >> weather.temp;
     std::string a = weather.place;
 
+    for (int e = 0; e < weather.place.length(); e++) {
+        if (a[e] == '-')
+            q++;
+    }
     for (int e=0; e < weather.place.length();e++) {
-        if (a[0] == '-' || a[-1] == '-') {
-            ////
+        if (a[0] == '-' || (q>=3) || a[a.size() - 1] == '-') {
+            throw std::exception();
+
         }
         else {
             const std::string validChars = "- ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀÁÂÃÄÅ¨ÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäå¸æçèéêëìíîïğñòóôõö÷øùúûüışÿ";
