@@ -15,5 +15,5 @@ Date GetDate(std::istream& ist);
 int IsLeap(int year);
 
 
-bool D_check(int day, int month);
+bool D_check(int day, int month, int year);
 bool Feb_test(int d, int m, int y);
