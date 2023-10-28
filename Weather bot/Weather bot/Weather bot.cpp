@@ -28,16 +28,15 @@ int main() {
 
     catch (const std::range_error) {
         std::cout << "Неверный формат даты";
-        return 0;
     }
 
 
     catch (const std::exception)
     {
-        std::cout << "File is not open";
-        return 0;
+        std::cout << "Ошибка в данных файла";
     }
     for (const auto& data : weath)
         data.print(std::cout);
+    return 0;
 
 }

@@ -33,7 +33,7 @@ Weather GetWeather(std::istream& ist) {
         else {
             const std::string validChars = "- ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀÁÂÃÄÅ¨ÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäå¸æçèéêëìíîïğñòóôõö÷øùúûüışÿ";
             if (validChars.find_first_of(a[e]) == std::string::npos) {
-                std::cout << "qwerty" << std::endl;
+                throw std::exception();
             }
         }
         
