@@ -13,23 +13,27 @@ int IsLeap(int year)
 }
 
 bool Feb_test(int d, int m, int y) {
-    if (IsLeap(y)) {
+    if (IsLeap(y) && D_check(d,m,y)) {
         if (m == 2 && d > 29) {
-            return true;
-        }
-        else {
             return false;
         }
+        else {
+            return true;
+        }
+    }
+    else {
+        return false;
+
     }
 }
 
 bool D_check(int day, int month, int year) {
     if (day > 31 || month > 12 || day<=0 || month <=0 || year <=0) {
 
-        return true;
+        return false;
     }
     else {
-        return false;
+        return true;
     }
 }
 
