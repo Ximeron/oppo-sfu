@@ -24,6 +24,7 @@ int main() {
             Weather w = GetWeather(in);
             weath.push_back(w);
         }
+
     }
 
     catch (const std::range_error) {
