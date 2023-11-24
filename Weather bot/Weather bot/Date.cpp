@@ -52,7 +52,7 @@ Date GetDate(istream& ist) {
     getline(ist, ch, '"');
 
 
-    if (!ist.good() && !D_check(date.dd, date.mm, date.yy) || !Feb_test(date.dd, date.mm, date.yy)) {
+    if (!ist.good() && !D_check(date.dd, date.mm, date.yy)) {
         throw std::range_error("Неверный формат даты");
     }
     return date;
