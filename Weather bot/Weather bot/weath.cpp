@@ -14,7 +14,7 @@ bool str_test(string a) {
             q++;
     }
     for (int e = 0; e < a.length(); e++) {
-        if (a[0] == '-' || (q >= 3) || a[a.size() - 1] == '-') {
+        if (a[0] == '-' || (q > 1) || a[a.size() - 1] == '-') {
 
             throw std::exception();
 

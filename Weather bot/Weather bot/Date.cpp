@@ -37,6 +37,9 @@ bool D_check(int day, int month, int year) {
         return Feb_test(day, month, year);
 
     }
+    else {
+        return true;
+    }
 }
 
 Date GetDate(istream& ist) {
