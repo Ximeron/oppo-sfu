@@ -14,27 +14,28 @@ int IsLeap(int year)
 }
 
 bool Feb_test(int d, int m, int y) {
-    if (IsLeap(y) && D_check(d,m,y)) {
-        if (m == 2 && d > 29) {
+        IsLeap(y);
+        if ((IsLeap(y) == true && m == 2 && d > 29)) {
+            return false;
+        }
+        else if ((IsLeap(y) == false && m == 2 && d > 28)) {
             return false;
         }
         else {
             return true;
-        }
-    }
-    else {
-        return false;
 
-    }
+        }
 }
 
 bool D_check(int day, int month, int year) {
-    if (day > 31 || month > 12 || day<=0 || month <=0 || year <=0) {
+    if (day > 31 || month > 12 || day <= 0 || month <= 0 || year <= 0) {
 
         return false;
     }
-    else {
-        return true;
+
+    else if(month == 2){
+        return Feb_test(day, month, year);
+
     }
 }
 
@@ -52,7 +53,7 @@ Date GetDate(istream& ist) {
     getline(ist, ch, '"');
 
 
-    if (!ist.good() && !D_check(date.dd, date.mm, date.yy)) {
+    if (!ist.good() && D_check(date.dd, date.mm, date.yy) == false) {
         throw std::range_error("Неверный формат даты");
     }
     return date;

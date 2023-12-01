@@ -17,26 +17,25 @@ int main() {
     vector<Weather> weath;
     //WarnIfFileNotOpen(in);
     ifstream in("weather.txt");
-   
-
-    try
-    {
-        while (!in.eof()) {
+    while (!in.eof()) {
+        try
+        {
             Weather w = GetWeather(in);
             weath.push_back(w);
         }
+        
+        catch (const std::range_error) {
+            std::cout << "Неверный формат даты";
+        }
 
+
+        catch (const std::exception)
+        {
+            std::cout << "Ошибка в данных файла";
+        }
     }
 
-    catch (const std::range_error) {
-        std::cout << "Неверный формат даты";
-    }
-
-
-    catch (const std::exception)
-    {
-        std::cout << "Ошибка в данных файла";
-    }
+    
     for (const auto& data : weath)
         data.print(std::cout);
     return 0;
