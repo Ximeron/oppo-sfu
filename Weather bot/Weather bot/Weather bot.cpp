@@ -29,9 +29,9 @@ int main() {
         }
 
 
-        catch (const std::exception)
+        catch (const std::exception& err)
         {
-            std::cout << "Ошибка в данных файла";
+            std::cout << "Ошибка в данных файла" << err.what();
         }
     }
 
