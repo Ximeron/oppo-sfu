@@ -6,7 +6,7 @@ using namespace std;
 
 
 int q = 0;
-bool str_test(string a) {
+bool StringTest(string a) {
     const std::string validChars = "- ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀÁÂÃÄÅ¨ÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäå¸æçèéêëìíîïğñòóôõö÷øùúûüışÿ";
 
     for (int e = 0; e < a.length(); e++) {
@@ -28,7 +28,7 @@ bool str_test(string a) {
 
     }
 }
-void Weather::print(std::ostream& out) const
+void Weather::Print(std::ostream& out) const
 {
     out << d.dd << '.' << d.mm << '.' << d.yy << " "
         << place << " " << temp << std::endl;
@@ -44,7 +44,7 @@ Weather GetWeather(std::istream& ist) {
         getline(ist, weather.place, '"');
         ist >> weather.temp;
         std::string a = weather.place;
-        str_test(a);
+        StringTest(a);
 
 
     }

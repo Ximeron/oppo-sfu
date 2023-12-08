@@ -12,8 +12,8 @@ struct Date {
 };
 
 Date GetDate(std::istream& ist);
-int IsLeap(int year);
+int LeapAssert(int year);
 
 
-bool D_check(int day, int month, int year);
-bool Feb_test(int d, int m, int y);
+bool DateConfirm(int day, int month, int year);
+bool FebruaryAssert(int d, int m, int y);

@@ -6,7 +6,6 @@
 using namespace std;
 
 
-#include "proto.h"
 #include "Date.h"
 #include "Weath.h"
 
@@ -37,7 +36,7 @@ int main() {
 
     
     for (const auto& data : weath)
-        data.print(std::cout);
+        data.Print(std::cout);
     return 0;
 
 }
