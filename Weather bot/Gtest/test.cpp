@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "../Weather bot/Date.cpp"
 #include "../Weather bot/weath.cpp"
-#include "../Weather bot/proto.cpp"
 #include <fstream>
 #include <sstream>
 

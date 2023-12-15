@@ -14,7 +14,6 @@ int LeapAssert(int year)
 }
 
 bool FebruaryAssert(int d, int m, int y) {
-        LeapAssert(y);
         if ((LeapAssert(y) == true && m == 2 && d > 29)) {
             return false;
         }

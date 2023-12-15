@@ -5,16 +5,16 @@
 using namespace std;
 
 
-int q = 0;
-bool StringTest(string a) {
+int q_count = 0;
+bool StringTest(const string& a) {
     const std::string validChars = "- ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀÁÂÃÄÅ¨ÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäå¸æçèéêëìíîïğñòóôõö÷øùúûüışÿ";
 
     for (int e = 0; e < a.length(); e++) {
         if (a[e] == '-')
-            q++;
+            q_count++;
     }
     for (int e = 0; e < a.length(); e++) {
-        if (a[0] == '-' || (q > 1) || a[a.size() - 1] == '-') {
+        if (a[0] == '-' || (q_count > 1) || a[a.size() - 1] == '-') {
 
             throw std::exception();
 
